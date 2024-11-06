@@ -1,22 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="bg-blue-600 flex flex-col text-white justify-center items-center  container">
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-        <h1>HELLO</h1>
-    </div> 
-    
-</body>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body class="theme container ">
+    <div
+      class="flex flex-col h-screen dark:bg-black transition-colors duration-200 w-screen"
+    >
+      <nav class="flex justify-between items-center p-4 ">
+        <svg
+          class="fill-black dark:fill-white"
+          width="60"
+          height="60"
+          viewBox="0 0 85 85"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_3_5)">
+            <path
+              d="M79.6875 74.3751H5.31253C2.3784 74.3751 0 71.9966 0 69.0626C0 66.1286 2.3784 63.7501 5.31253 63.7501H79.6876C82.6216 63.7501 85.0002 66.1286 85.0002 69.0626C85 71.9966 82.6216 74.3751 79.6875 74.3751ZM79.6875 47.8125H5.31253C2.3784 47.8125 0 45.4341 0 42.5001C0 39.5661 2.3784 37.1876 5.31253 37.1876H79.6876C82.6216 37.1876 85.0002 39.566 85.0002 42.5001C85.0002 45.4342 82.6216 47.8125 79.6875 47.8125ZM79.6875 21.25H5.31253C2.3784 21.25 0 18.8716 0 15.9374C0 13.0033 2.3784 10.6249 5.31253 10.6249H79.6876C82.6216 10.6249 85.0002 13.0033 85.0002 15.9374C85.0002 18.8716 82.6216 21.25 79.6875 21.25Z"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_3_5">
+              <rect width="85" height="85" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <h1 class="text-4xl font-bold dark:text-white hidden md:block">Quiz Game</h1>
+        <div class="flex flex-row justify-between items-center gap-4">
+          <svg
+            class="fill-black dark:fill-white"
+            width="60"
+            height="60"
+            viewBox="0 0 85 85"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M72.5521 12.4479C64.525 4.421 53.852 0 42.5 0C31.148 0 20.475 4.42083 12.4479 12.4479C4.421 20.475 0 31.148 0 42.5C0 53.852 4.42083 64.525 12.4479 72.5521C20.475 80.579 31.148 85 42.5 85C53.852 85 64.525 80.5792 72.5521 72.5521C80.579 64.525 85 53.852 85 42.5C85 31.148 80.5792 20.475 72.5521 12.4479ZM18.4452 71.27C19.8487 59.1949 30.2304 49.8723 42.5 49.8723C48.968 49.8723 55.0505 52.3922 59.6255 56.9668C63.4905 60.8324 65.9283 65.8796 66.5553 71.2693C60.0381 76.7278 51.6465 80.0195 42.5 80.0195C33.3535 80.0195 24.9626 76.7284 18.4452 71.27ZM42.5 44.7424C35.3827 44.7424 29.5916 38.9514 29.5916 31.8342C29.5916 24.7162 35.3829 18.9258 42.5 18.9258C49.6171 18.9258 55.4084 24.7162 55.4084 31.8342C55.4084 38.9514 49.6173 44.7425 42.5 44.7425V44.7424ZM70.842 67.0594C69.5623 61.9062 66.9019 57.1994 63.1469 53.4454C60.086 50.3844 56.4647 48.0881 52.5154 46.6491C57.2631 43.4294 60.3888 37.9897 60.3888 31.8342C60.3888 21.9705 52.3637 13.9453 42.5 13.9453C32.6363 13.9453 24.6112 21.9705 24.6112 31.8342C24.6112 37.993 27.7396 43.4345 32.4911 46.6537C28.8575 47.9778 25.4952 50.0252 22.6022 52.7203C18.4128 56.6216 15.5037 61.5963 14.1548 67.0554C8.44223 60.4699 4.98047 51.8819 4.98047 42.5C4.98047 21.8116 21.8116 4.98047 42.5 4.98047C63.1884 4.98047 80.0195 21.8116 80.0195 42.5C80.0195 51.8837 76.5564 60.4738 70.842 67.0594Z"
+            />
+          </svg>
+          <button
+            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md"
+          >
+            dark
+          </button>
+        </div>
+      </nav>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
