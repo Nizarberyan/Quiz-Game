@@ -3,36 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="index.css" />
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
   </head>
-  <body class="theme container ">
+  <body class="theme">
     <div
-      class="flex flex-col h-screen dark:bg-black transition-colors duration-200 w-screen"
+      class="flex flex-col bg-primary-light dark:bg-primary-dark transition-colors duration-200"
     >
-      <nav class="flex justify-between items-center p-4 ">
-        <svg
-          class="fill-black dark:fill-white"
-          width="60"
-          height="60"
-          viewBox="0 0 85 85"
-          xmlns="http://www.w3.org/2000/svg"
+      <nav class="flex justify-between items-center p-4">
+        <button
+          class="p-3 hover:bg-gray-200 rounded-full transition-colors duration-200 dark:hover:bg-gray-700"
         >
-          <g clip-path="url(#clip0_3_5)">
-            <path
-              d="M79.6875 74.3751H5.31253C2.3784 74.3751 0 71.9966 0 69.0626C0 66.1286 2.3784 63.7501 5.31253 63.7501H79.6876C82.6216 63.7501 85.0002 66.1286 85.0002 69.0626C85 71.9966 82.6216 74.3751 79.6875 74.3751ZM79.6875 47.8125H5.31253C2.3784 47.8125 0 45.4341 0 42.5001C0 39.5661 2.3784 37.1876 5.31253 37.1876H79.6876C82.6216 37.1876 85.0002 39.566 85.0002 42.5001C85.0002 45.4342 82.6216 47.8125 79.6875 47.8125ZM79.6875 21.25H5.31253C2.3784 21.25 0 18.8716 0 15.9374C0 13.0033 2.3784 10.6249 5.31253 10.6249H79.6876C82.6216 10.6249 85.0002 13.0033 85.0002 15.9374C85.0002 18.8716 82.6216 21.25 79.6875 21.25Z"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_3_5">
-              <rect width="85" height="85" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-        <h1 class="text-4xl font-bold dark:text-white hidden md:block">Quiz Game</h1>
+          <svg
+            class="fill-black dark:fill-white hamburger transition-all duration-200"
+            width="60"
+            height="60"
+            viewBox="0 0 85 85"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_3_5)">
+              <path
+                d="M79.6875 74.3751H5.31253C2.3784 74.3751 0 71.9966 0 69.0626C0 66.1286 2.3784 63.7501 5.31253 63.7501H79.6876C82.6216 63.7501 85.0002 66.1286 85.0002 69.0626C85 71.9966 82.6216 74.3751 79.6875 74.3751ZM79.6875 47.8125H5.31253C2.3784 47.8125 0 45.4341 0 42.5001C0 39.5661 2.3784 37.1876 5.31253 37.1876H79.6876C82.6216 37.1876 85.0002 39.566 85.0002 42.5001C85.0002 45.4342 82.6216 47.8125 79.6875 47.8125ZM79.6875 21.25H5.31253C2.3784 21.25 0 18.8716 0 15.9374C0 13.0033 2.3784 10.6249 5.31253 10.6249H79.6876C82.6216 10.6249 85.0002 13.0033 85.0002 15.9374C85.0002 18.8716 82.6216 21.25 79.6875 21.25Z"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3_5">
+                <rect width="85" height="85" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+
         <div class="flex flex-row justify-between items-center gap-4">
           <svg
             class="fill-black dark:fill-white"
@@ -46,13 +51,60 @@
             />
           </svg>
           <button
-            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md"
+            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md theme-btn"
           >
-            dark
+            theme
           </button>
+          <div>
+            <aside
+              class="fixed top-0 left-0 w-64 bg-primary-dark dark:bg-primary-light h-screen p-4 transition-all duration-900 ease-in-out z-50 hidden"
+            >
+              <div class="flex flex-col justify-between">
+                <button
+                  class="close p-2 text-primary-light bg-primary-dark dark:text-black dark:bg-white rounded-md self-start"
+                >
+                  <i class="fi fi-rr-cross"></i>
+                </button>
+              </div>
+              <ul
+                class="space-y-4 bg-primary-dark dark:bg-primary-light rounded-md"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="rounded-t-md block p-2 text-primary-light dark:text-primary-dark dark:hover:text-primary-light hover:bg-gray-200 hover:text-black transition-colors duration-200 dark:hover:bg-gray-700"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block p-2 text-white dark:text-black dark:hover:text-white hover:bg-gray-200 hover:text-black transition-colors duration-200 dark:hover:bg-gray-700"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block p-2 text-white dark:text-black dark:hover:text-white hover:bg-gray-200 hover:text-black transition-colors duration-200 dark:hover:bg-gray-700"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </nav>
+      <section class="main flex flex-col items-center">
+        <div class="flex justify-center">
+          <h1 class="text-4xl dark:text-primary-light font-medium title">
+            Welcome
+          </h1>
+        </div>
+        <div class="w-[91%] quizzes flex flex-row flex-wrap gap-5 w-"></div>
+      </section>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>

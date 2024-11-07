@@ -6,7 +6,22 @@ module.exports = {
     files: ["./src/*.{html,js}"],
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          dark: "#13141f",
+          light: "#f7f7f7",
+          ghost: {
+            light: "#f9f9f9",
+          },
+        },
+        dark: {
+          primary: {
+            dark: "#23242f",
+          },
+        },
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 
