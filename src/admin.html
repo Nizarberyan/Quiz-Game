@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Dashboard</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  </head>
+  <body>
+    <dialog
+      id="createQuizDialog"
+      class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md w-full max-w-md"
+    >
+      <h2 class="text-2xl font-bold mb-4">Create New Quiz</h2>
+      <form id="createQuizForm">
+        <div class="mb-4">
+          <label for="quizTitle" class="block font-medium mb-2"
+            >Quiz Title</label
+          >
+          <input
+            type="text"
+            id="quizTitle"
+            name="quizTitle"
+            class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="quizDifficulty" class="block font-medium mb-2"
+            >Difficulty</label
+          >
+          <select
+            id="quizDifficulty"
+            name="quizDifficulty"
+            class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+            required
+          >
+            <option value="">Select difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="quizDuration" class="block font-medium mb-2"
+            >Time to Complete (minutes)</label
+          >
+          <input
+            type="number"
+            id="quizDuration"
+            name="quizDuration"
+            class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+            min="1"
+            required
+          />
+        </div>
+        <h3 class="text-xl font-bold mb-2">Questions</h3>
+        <div id="questionsContainer">
+          <div class="mb-4 question-group">
+            <label for="question1" class="block font-medium mb-2"
+              >Question 1</label
+            >
+            <input
+              type="text"
+              id="question1"
+              name="question1"
+              class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+              required
+            />
+            <div class="flex gap-4 mt-2">
+              <input
+                type="text"
+                id="answer1a"
+                name="answer1a"
+                class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+                placeholder="Answer A"
+                required
+              />
+              <input
+                type="text"
+                id="answer1b"
+                name="answer1b"
+                class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+                placeholder="Answer B"
+                required
+              />
+              <input
+                type="text"
+                id="answer1c"
+                name="answer1c"
+                class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+                placeholder="Answer C"
+                required
+              />
+              <input
+                type="text"
+                id="answer1d"
+                name="answer1d"
+                class="w-full px-4 py-2 rounded-md border border-gray-400 focus:outline-none focus:border-gray-600"
+                placeholder="Answer D"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="addQuestion"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mb-4"
+        >
+          <i class="fas fa-plus mr-2"></i>
+          Add Question
+        </button>
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md mr-2"
+          >
+            Create Quiz
+          </button>
+          <button
+            type="button"
+            id="closeDialog"
+            class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-md"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div
+      class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-200 font-sans"
+    >
+      <nav class="flex justify-between items-center p-4">
+        <button
+          class="p-3 rounded-full transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+          aria-label="Open Menu"
+        >
+          <svg
+            class="fill-black dark:fill-white hamburger transition-all duration-200"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+          </svg>
+        </button>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md theme-btn"
+            aria-label="Toggle Theme"
+          >
+            Theme
+          </button>
+        </div>
+      </nav>
+      <div class="container mx-auto py-8">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-200"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Quiz Dashboard</h1>
+            <button
+              id="createQuiz"
+              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md"
+            >
+              <i class="fas fa-plus mr-2"></i>
+              Create New Quiz
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left table-auto">
+              <thead>
+                <tr
+                  class="bg-gray-200 dark:bg-gray-700 transition-colors duration-200"
+                >
+                  <th class="px-4 py-3">Title</th>
+                  <th class="px-4 py-3">Questions</th>
+                  <th class="px-4 py-3">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="quizTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>

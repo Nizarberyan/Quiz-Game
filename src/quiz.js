@@ -109,7 +109,7 @@ function showCurrentQuestion() {
         <div class="question-ordering flex flex-col gap-4" style="max-width: 95%;">
           <p class="question-text text-xl text-white">${currentQuestion.question}</p>
           <div class="items-container flex flex-col gap-2">
-            ${currentQuestion.items 
+            ${currentQuestion.items
               .map(
                 (item, index) => `
               <div class="item flex items-center gap-4 bg-gray-700 hover:bg-gray-500 p-4 rounded-md cursor-move transition-colors" draggable="true" data-index="${index}">
@@ -126,13 +126,6 @@ function showCurrentQuestion() {
       // Add drag and drop functionality
       const items = document.querySelectorAll(".item");
       const container = document.querySelector(".items-container");
-
-      items.forEach((item) => {
-        item.addEventListener("dragstart", handleDragStart);
-        item.addEventListener("dragover", handleDragOver);
-        item.addEventListener("drop", handleDrop);
-        item.addEventListener("dragend", handleDragEnd);
-      });
 
       document.querySelector(".submit-order").addEventListener("click", () => {
         const currentOrder = Array.from(document.querySelectorAll(".item")).map(
@@ -245,6 +238,20 @@ function showCurrentQuestion() {
 let totalScore = 0;
 let timeLeft = 0;
 let timer;
+let correctAnswerCount = 0;
+let incorrectAnswerCount = 0;
+let CompletionTime = 0;
+
+const startTime = new Date();
+
+function calculateCompletionTime(startTime) {
+  const endTime = new Date();
+  const timeDiff = endTime - startTime;
+  const minutes = Math.floor(timeDiff / 60000);
+  const seconds = Math.floor((timeDiff % 60000) / 1000);
+
+  return `${minutes}m ${seconds}s`;
+}
 
 function attachAnswerEventListeners() {
   const buttons = document.querySelectorAll(".answer-btn, .submit-answer");
@@ -262,14 +269,15 @@ function updateQuizUI() {
         <div class="timer font-bold text-white">
           Time: <span class="time-value">${timeLeft}</span>s
         </div>
-        <div class="progress-bar w-full h-3 h-4 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+        <div class="progress-bar w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
           <div class="progress rounded-full transition-all duration-300" style="width: ${(currentQuestionIndex / currentQuiz.questions.length) * 100 + "%"};height:20px; background-color:green"></div>
         </div>
+        <p class="question text-white">
+  Question <span >${currentQuestionIndex}</span>/<span >${finalQuiz.length}</span>
+</p>
       </div>`;
 
   document.querySelector(".quiz-stats-container ").innerHTML = quizHeader;
-  //console.log(currentQuestionIndex);
-  //console.log(typeof((currentQuestionIndex / currentQuiz.questions.length) * 100));
 }
 
 function startTimer() {
@@ -280,6 +288,7 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       clearInterval(timer);
+
       finishQuiz();
     }
   }, 1000);
@@ -288,48 +297,110 @@ function startTimer() {
 function finishQuiz() {
   clearInterval(timer);
   console.log(`Final Score: ${totalScore}`);
-  window.alert(`Quiz completed! Your score: ${totalScore}`);
+  showResultsDialog();
 }
 
 function handleAnswer(event) {
   const currentQuestion = currentQuiz.questions[currentQuestionIndex];
   let isCorrect = false;
   let points = 0;
+  const button = event.target;
 
-  if (currentQuestion.type === "input") {
-    const userInput = event.target.previousElementSibling.value;
-    const correctAnswer = currentQuestion.correctAnswer || "";
-    const alternateAnswers = currentQuestion.alternateAnswers || [];
-    const validAnswers = [correctAnswer, ...alternateAnswers];
+  // Get all answer buttons for this question
+  const allButtons = button.parentElement.querySelectorAll("button");
 
-    isCorrect = validAnswers
-      .filter((answer) => answer)
-      .map((answer) => answer.toString().toLowerCase())
-      .includes(userInput.toLowerCase());
-    points = isCorrect ? currentQuestion.points : 0;
-  } else if (currentQuestion.type === "boolean") {
-    const userAnswer = event.target.dataset.value === "true";
-    isCorrect = userAnswer === currentQuestion.correctAnswer;
-    points = isCorrect ? currentQuestion.points : 0;
-  } else if (
-    currentQuestion.type === "multiple-choice" ||
-    currentQuestion.type === "multiple"
-  ) {
-    points = parseInt(event.target.dataset.points);
-    isCorrect = points === 10;
+  // Handle different question types
+  switch (currentQuestion.type) {
+    case "input":
+      const userInput = event.target.previousElementSibling.value;
+      const correctAnswer = currentQuestion.correctAnswer || "";
+      const alternateAnswers = currentQuestion.alternateAnswers || [];
+      const validAnswers = [correctAnswer, ...alternateAnswers];
+
+      isCorrect = validAnswers
+        .filter((answer) => answer)
+        .map((answer) => answer.toString().toLowerCase())
+        .includes(userInput.toLowerCase());
+      points = isCorrect ? currentQuestion.points : 0;
+      break;
+
+    case "boolean":
+      const userAnswer = button.dataset.value === "true";
+      isCorrect = userAnswer === currentQuestion.answer; // Changed from correctAnswer to answer
+      points = isCorrect ? currentQuestion.points : 0;
+      break;
+
+    case "multiple-choice":
+    case "multiple":
+      points = parseInt(button.dataset.points) || 0;
+      isCorrect = points === 10;
+      break;
+
+    default:
+      console.warn("Unknown question type:", currentQuestion.type);
+      return;
+  }
+
+  // Gray out all buttons first
+  allButtons.forEach((btn) => {
+    if (btn !== button) {
+      btn.classList.add("opacity-50", "bg-gray-400");
+      btn.disabled = true; // Prevent further clicks
+    }
+  });
+
+  if (isCorrect) {
+    correctAnswerCount++;
+    // Make selected button green
+    button.classList.remove("bg-gray-700", "hover:bg-gray-500");
+    button.classList.add("bg-green-500");
+  } else {
+    incorrectAnswerCount++;
+    // Make selected button red
+    button.classList.remove("bg-gray-700", "hover:bg-gray-500");
+    button.classList.add("bg-red-500");
+
+    // Find and highlight the correct answer button
+    allButtons.forEach((btn) => {
+      if (
+        (currentQuestion.type === "boolean" &&
+          btn.dataset.value === currentQuestion.answer?.toString()) ||
+        (["multiple-choice", "multiple"].includes(currentQuestion.type) &&
+          parseInt(btn.dataset.points) === 10)
+      ) {
+        btn.classList.remove("bg-gray-700", "hover:bg-gray-500", "opacity-50");
+        btn.classList.add("bg-green-500");
+      }
+    });
   }
 
   totalScore += points;
   updateQuizUI();
 
-  currentQuestionIndex++;
-  if (currentQuestionIndex < currentQuiz.questions.length) {
-    showCurrentQuestion();
-  } else {
-    finishQuiz();
-  }
-}
+  // Add a delay before moving to next question
+  setTimeout(() => {
+    // Reset all button styles
+    allButtons.forEach((btn) => {
+      btn.classList.remove(
+        "bg-green-500",
+        "bg-red-500",
+        "opacity-50",
+        "bg-gray-400"
+      );
+      btn.classList.add("bg-gray-700", "hover:bg-gray-500");
+      btn.disabled = false;
+    });
 
+    currentQuestionIndex++;
+    if (currentQuestionIndex < currentQuiz.questions.length) {
+      showCurrentQuestion();
+    } else {
+      const completionTime = calculateCompletionTime(startTime);
+      console.log(`Completion Time: ${completionTime}`);
+      finishQuiz();
+    }
+  }, 1500);
+}
 window.addEventListener("load", () => {
   updateQuizUI();
   startTimer();
@@ -339,70 +410,6 @@ showCurrentQuestion();
 
 let draggedItem = null;
 
-function handleDragStart(e) {
-  draggedItem = this;
-  this.classList.add("opacity-50");
-}
-
-function handleDragOver(e) {
-  e.preventDefault();
-}
-
-function handleDrop(e) {
-  e.preventDefault();
-  if (this !== draggedItem) {
-    const allItems = [...document.querySelectorAll(".item")];
-    const draggedIndex = allItems.indexOf(draggedItem);
-    const droppedIndex = allItems.indexOf(this);
-
-    if (draggedIndex < droppedIndex) {
-      this.parentNode.insertBefore(draggedItem, this.nextSibling);
-    } else {
-      this.parentNode.insertBefore(draggedItem, this);
-    }
-
-    // Update order numbers
-    document.querySelectorAll(".order-number").forEach((num, idx) => {
-      num.textContent = idx + 1;
-    });
-  }
-}
-
-function handleDragEnd(e) {
-  this.classList.remove("opacity-50");
-  draggedItem = null;
-}
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-function handleMatchDragStart(e) {
-  e.dataTransfer.setData("text/plain", e.target.dataset.index);
-  setTimeout(() => e.target.classList.add("opacity-50"), 0);
-}
-
-function handleMatchDragEnd(e) {
-  e.target.classList.remove("opacity-50");
-}
-
-function handleMatchDragOver(e) {
-  e.preventDefault();
-}
-
-function handleMatchDrop(e) {
-  e.preventDefault();
-  const draggedItem = document.querySelector(".right-item.opacity-50");
-  if (draggedItem) {
-    e.target.appendChild(draggedItem);
-    draggedItem.classList.remove("opacity-50");
-  }
-}
-
 // Create and insert quiz stats container
 const quizContainer = document.querySelector(".quiz-area").parentElement;
 const statsContainer = document.createElement("div");
@@ -411,3 +418,55 @@ quizContainer.insertBefore(
   statsContainer,
   document.querySelector(".quiz-area")
 );
+function showResultsDialog() {
+  const dialog = document.getElementById("resultsDialog");
+
+  // Calculate accuracy percentage
+  const totalQuestions = currentQuiz.questions.length;
+  const accuracyPercentage = Math.round(
+    (correctAnswerCount / totalQuestions) * 100
+  );
+
+  // Update dialog content with final results
+  document.getElementById("finalScore").textContent = totalScore;
+  document.getElementById("completionTime").textContent =
+    calculateCompletionTime(startTime);
+  document.getElementById("correctAnswers").textContent = correctAnswerCount;
+  document.getElementById("totalQuestions").textContent = totalQuestions;
+  document.getElementById("accuracy").textContent = accuracyPercentage;
+
+  // Show the dialog
+  dialog.showModal();
+}
+
+function closeResultsDialog() {
+  const dialog = document.getElementById("resultsDialog");
+  dialog.close();
+
+  // Redirect to home or quiz list after closing
+  window.location.href = "index.html";
+}
+
+// Update your finishQuiz function to use the dialog
+
+// Add event listener for ESC key to close dialog
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && document.getElementById("resultsDialog").open) {
+    closeResultsDialog();
+    window.location.href = "index.html";
+  }
+});
+
+// Update timer finish to show dialog
+function startTimer() {
+  timeLeft = currentQuiz.duration * 60; // Convert minutes to seconds
+  timer = setInterval(() => {
+    timeLeft--;
+    updateQuizUI();
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      finishQuiz(); // This will now show the dialog
+    }
+  }, 1000);
+}

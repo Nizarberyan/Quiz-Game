@@ -151,8 +151,7 @@ let quizzes = [
       {
         id: 3,
         type: "multiple-choice",
-        question:
-          "Which of these are valid React hooks? ",
+        question: "Which of these are valid React hooks? ",
         answers: [
           { text: "useState", correct: true, points: 5 },
           { text: "useComponent", correct: false, points: 0 },
@@ -332,8 +331,7 @@ let quizzes = [
       {
         id: 16,
         type: "multiple-choice",
-        question:
-          "Which statements about React props are true? ",
+        question: "Which statements about React props are true? ",
         answers: [
           { text: "Props are read-only", correct: true, points: 5 },
           {
@@ -384,8 +382,7 @@ let quizzes = [
       {
         id: 1,
         type: "multiple-choice",
-        question:
-          "Which of the following are core features of Node.js? ",
+        question: "Which of the following are core features of Node.js? ",
         answers: [
           { text: "Event-driven programming", correct: true, points: 5 },
           { text: "Non-blocking I/O", correct: true, points: 5 },
@@ -467,8 +464,7 @@ let quizzes = [
       {
         id: 9,
         type: "multiple-choice",
-        question:
-          "Which HTTP methods are supported by Express.js? ",
+        question: "Which HTTP methods are supported by Express.js? ",
         answers: [
           { text: "GET", correct: true, points: 5 },
           { text: "POST", correct: true, points: 5 },
@@ -553,8 +549,7 @@ let quizzes = [
       {
         id: 1,
         type: "multiple-choice",
-        question:
-          "Which of the following are examples of SQL DDL commands? ",
+        question: "Which of the following are examples of SQL DDL commands? ",
         answers: [
           { text: "CREATE", correct: true, points: 5 },
           { text: "ALTER", correct: true, points: 5 },
@@ -588,8 +583,7 @@ let quizzes = [
       {
         id: 4,
         type: "multiple-choice",
-        question:
-          "Which of the following are valid types of joins in SQL? ",
+        question: "Which of the following are valid types of joins in SQL? ",
         answers: [
           { text: "INNER JOIN", correct: true, points: 5 },
           { text: "LEFT OUTER JOIN", correct: true, points: 5 },
@@ -641,8 +635,7 @@ let quizzes = [
       {
         id: 9,
         type: "multiple-choice",
-        question:
-          "Which of the following are ACID properties? ",
+        question: "Which of the following are ACID properties? ",
         answers: [
           { text: "Atomicity", correct: true, points: 5 },
           { text: "Consistency", correct: true, points: 5 },
@@ -685,8 +678,7 @@ let quizzes = [
       {
         id: 13,
         type: "multiple-choice",
-        question:
-          "Which of the following are valid database relationships? ",
+        question: "Which of the following are valid database relationships? ",
         answers: [
           { text: "One-to-One", correct: true, points: 5 },
           { text: "One-to-Many", correct: true, points: 5 },
@@ -721,8 +713,7 @@ let quizzes = [
       {
         id: 16,
         type: "multiple-choice",
-        question:
-          "Which of the following are true about database views? ",
+        question: "Which of the following are true about database views? ",
         answers: [
           {
             text: "Views can simplify complex queries",
@@ -776,8 +767,7 @@ let quizzes = [
       {
         id: 20,
         type: "multiple-choice",
-        question:
-          "Which of the following are types of database triggers? ",
+        question: "Which of the following are types of database triggers? ",
         answers: [
           { text: "BEFORE INSERT", correct: true, points: 5 },
           { text: "AFTER UPDATE", correct: true, points: 5 },
@@ -819,8 +809,7 @@ let quizzes = [
       {
         id: 24,
         type: "multiple-choice",
-        question:
-          "Which of the following are valid database backup types? ",
+        question: "Which of the following are valid database backup types? ",
         answers: [
           { text: "Full Backup", correct: true, points: 5 },
           { text: "Differential Backup", correct: true, points: 5 },
@@ -934,8 +923,7 @@ let quizzes = [
       {
         id: 7,
         type: "multiple-choice",
-        question:
-          "Which of these are valid Python data types? ",
+        question: "Which of these are valid Python data types? ",
         answers: [
           { text: "int", correct: true, points: 5 },
           { text: "str", correct: true, points: 5 },
@@ -976,8 +964,7 @@ let quizzes = [
       {
         id: 11,
         type: "multiple-choice",
-        question:
-          "Which of these are valid ways to compare values in Python? ",
+        question: "Which of these are valid ways to compare values in Python? ",
         answers: [
           { text: "==", correct: true, points: 5 },
           { text: "!=", correct: true, points: 5 },
@@ -1014,8 +1001,7 @@ let quizzes = [
       {
         id: 1,
         type: "multiple-choice",
-        question:
-          "Which of the following are supervised learning algorithms? ",
+        question: "Which of the following are supervised learning algorithms? ",
         answers: [
           { text: "Linear Regression", correct: true, points: 5 },
           { text: "K-Means Clustering", correct: false, points: 0 },
@@ -1162,8 +1148,7 @@ let quizzes = [
       {
         id: 12,
         type: "multiple-choice",
-        question:
-          "Which statements about cross-validation are true? ",
+        question: "Which statements about cross-validation are true? ",
         answers: [
           { text: "It helps prevent overfitting", correct: true, points: 5 },
           {
@@ -1289,8 +1274,7 @@ let quizzes = [
       {
         id: 22,
         type: "multiple-choice",
-        question:
-          "Which regularization techniques can prevent overfitting? ",
+        question: "Which regularization techniques can prevent overfitting? ",
         answers: [
           { text: "L1 (Lasso)", correct: true, points: 5 },
           { text: "L2 (Ridge)", correct: true, points: 5 },
@@ -1353,8 +1337,7 @@ let quizzes = [
       {
         id: 27,
         type: "multiple-choice",
-        question:
-          "Which statements about ensemble methods are true? ",
+        question: "Which statements about ensemble methods are true? ",
         answers: [
           { text: "They combine multiple models", correct: true, points: 5 },
           { text: "They always improve accuracy", correct: false, points: 0 },
@@ -1593,8 +1576,7 @@ let quizzes = [
       {
         id: 1,
         type: "multiple-choice",
-        question:
-          "Which of the following are components of the CIA triad? ",
+        question: "Which of the following are components of the CIA triad? ",
         answers: [
           { text: "Confidentiality", correct: true, points: 5 },
           { text: "Integrity", correct: true, points: 5 },
@@ -1628,8 +1610,7 @@ let quizzes = [
       {
         id: 4,
         type: "multiple-choice",
-        question:
-          "Which of the following are common types of malware? ",
+        question: "Which of the following are common types of malware? ",
         answers: [
           { text: "Ransomware", correct: true, points: 5 },
           { text: "Trojan Horse", correct: true, points: 5 },
@@ -1663,8 +1644,7 @@ let quizzes = [
       {
         id: 7,
         type: "multiple-choice",
-        question:
-          "Which of these are characteristics of a strong password? ",
+        question: "Which of these are characteristics of a strong password? ",
         answers: [
           { text: "Contains special characters", correct: true, points: 5 },
           { text: "At least 12 characters long", correct: true, points: 5 },
@@ -1710,8 +1690,7 @@ let quizzes = [
       {
         id: 11,
         type: "multiple-choice",
-        question:
-          "Which of these are common network security tools? ",
+        question: "Which of these are common network security tools? ",
         answers: [
           { text: "Firewall", correct: true, points: 5 },
           { text: "IDS/IPS", correct: true, points: 5 },
@@ -1745,8 +1724,7 @@ let quizzes = [
       {
         id: 14,
         type: "multiple-choice",
-        question:
-          "Which of these are examples of social engineering attacks? ",
+        question: "Which of these are examples of social engineering attacks? ",
         answers: [
           { text: "Phishing", correct: true, points: 5 },
           { text: "Pretexting", correct: true, points: 5 },
@@ -1895,643 +1873,6 @@ let quizzes = [
         answer:
           "To translate domain names (e.g., google.com) into IP addresses.",
         totalPoints: 10,
-      },
-    ],
-  },
-  {
-    id: 10,
-    title: "Cloud Computing Concepts",
-    description:
-      "Test your knowledge of cloud computing platforms and services.",
-    difficulty: "Medium",
-    numQuestions: 18,
-    duration: 30,
-    cover: "./images/Cloud-Computing-Concepts.png",
-
-    questions: [
-      {
-        id: 1,
-        type: "multiple-choice",
-        question:
-          "Which of the following is NOT a major cloud service provider?",
-        answers: [
-          { text: "Amazon Web Services (AWS)", correct: false, points: 0 },
-          { text: "Microsoft Azure", correct: false, points: 0 },
-          { text: "Google Cloud Platform (GCP)", correct: false, points: 0 },
-          { text: "Oracle On-Premises", correct: true, points: 5 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 2,
-        type: "boolean",
-        question: "Cloud computing relies on virtualization technology.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 3,
-        type: "multiple-choice",
-        question: "What does IaaS stand for in cloud computing?",
-        answers: [
-          { text: "Internet as a Service", correct: false, points: 0 },
-          { text: "Infrastructure as a Service", correct: true, points: 5 },
-          { text: "Information as a Service", correct: false, points: 0 },
-          {
-            text: "Integrated Application as a Service",
-            correct: false,
-            points: 0,
-          },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 4,
-        type: "multiple-choice",
-        question:
-          "Which of these are benefits of cloud computing? ",
-        answers: [
-          { text: "Scalability", correct: true, points: 2 },
-          { text: "Cost-efficiency", correct: true, points: 2 },
-          { text: "Increased security risks", correct: false, points: 0 },
-          { text: "Enhanced collaboration", correct: true, points: 2 },
-        ],
-        totalPoints: 6,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 5,
-        type: "input",
-        question: "What is the difference between public and private clouds?",
-        answer:
-          "Public clouds are shared resources offered by third-party providers, while private clouds are dedicated resources used by a single organization.",
-        totalPoints: 10,
-      },
-      {
-        id: 6,
-        type: "multiple-choice",
-        question:
-          "Which cloud service model provides access to software applications over the internet?",
-        answers: [
-          { text: "IaaS", correct: false, points: 0 },
-          { text: "PaaS", correct: false, points: 0 },
-          { text: "SaaS", correct: true, points: 5 },
-          { text: "None of the above", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 7,
-        type: "boolean",
-        question: "Serverless computing means there are no servers involved.",
-        answers: [
-          { text: "True", correct: false, points: 0 },
-          { text: "False", correct: true, points: 5 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 8,
-        type: "multiple-choice",
-        question:
-          "Which of these is a popular containerization technology used in cloud environments?",
-        answers: [
-          { text: "Docker", correct: true, points: 5 },
-          { text: "Kubernetes", correct: false, points: 0 },
-          { text: "VirtualBox", correct: false, points: 0 },
-          { text: "VMware", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 9,
-        type: "multiple-choice",
-        question:
-          "What is a key benefit of using a Content Delivery Network (CDN)?",
-        answers: [
-          { text: "Reduced latency", correct: true, points: 5 },
-          { text: "Increased storage capacity", correct: false, points: 0 },
-          { text: "Improved data security", correct: false, points: 0 },
-          { text: "Simplified server management", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 10,
-        type: "boolean",
-        question:
-          "A hybrid cloud combines on-premises infrastructure with public cloud services.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 11,
-        type: "multiple-choice",
-        question:
-          "Which cloud service is typically used for storing and managing large amounts of data?",
-        answers: [
-          { text: "Compute Engine", correct: false, points: 0 },
-          { text: "Cloud Storage", correct: true, points: 5 },
-          { text: "Cloud Functions", correct: false, points: 0 },
-          { text: "Cloud DNS", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 12,
-        type: "input",
-        question: "What is the purpose of a Virtual Private Cloud (VPC)?",
-        answer:
-          "A VPC allows you to create a logically isolated section within a public cloud to launch AWS resources in a virtual network that you define.",
-        totalPoints: 10,
-      },
-      {
-        id: 13,
-        type: "multiple-choice",
-        question:
-          "Which of the following are common cloud security threats? ",
-        answers: [
-          { text: "Data breaches", correct: true, points: 2 },
-          { text: "Denial of service attacks", correct: true, points: 2 },
-          { text: "Insider threats", correct: true, points: 2 },
-          { text: "Hardware failures", correct: false, points: 0 },
-        ],
-        totalPoints: 6,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 14,
-        type: "multiple-choice",
-        question: "What is the role of a Cloud Service Level Agreement (SLA)?",
-        answers: [
-          {
-            text: "Defines the performance and availability guarantees of a cloud service",
-            correct: true,
-            points: 5,
-          },
-          {
-            text: "Sets the pricing model for cloud resources",
-            correct: false,
-            points: 0,
-          },
-          {
-            text: "Specifies the security protocols for a cloud environment",
-            correct: false,
-            points: 0,
-          },
-          {
-            text: "Outlines the data governance policies for cloud data",
-            correct: false,
-            points: 0,
-          },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 15,
-        type: "boolean",
-        question:
-          "Cloud computing can help organizations reduce their carbon footprint.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 16,
-        type: "multiple-choice",
-        question: "Which of these is NOT a common cloud deployment model?",
-        answers: [
-          { text: "Public cloud", correct: false, points: 0 },
-          { text: "Private cloud", correct: false, points: 0 },
-          { text: "Hybrid cloud", correct: false, points: 0 },
-          { text: "Distributed cloud", correct: true, points: 5 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 17,
-        type: "input",
-        question:
-          "What is the main advantage of using a serverless computing model?",
-        answer:
-          "Serverless computing allows developers to focus on writing code without managing servers.",
-        totalPoints: 10,
-      },
-      {
-        id: 18,
-        type: "multiple-choice",
-        question:
-          "Which of the following are examples of serverless computing platforms? ",
-        answers: [
-          { text: "AWS Lambda", correct: true, points: 2 },
-          { text: "Google Cloud Functions", correct: true, points: 2 },
-          { text: "Microsoft Azure Functions", correct: true, points: 2 },
-          { text: "Docker Swarm", correct: false, points: 0 },
-        ],
-        totalPoints: 6,
-        minimumCorrectRequired: 2,
-      },
-    ],
-  },
-  {
-    id: 11,
-    title: "Coding Knowledge Check",
-    description:
-      "Put your coding skills to the test with this quiz on programming fundamentals and languages!",
-    difficulty: "Medium",
-    numQuestions: 14,
-    duration: 25,
-    cover: "./images/Coding-Knowledge-Check.jpg",
-    questions: [
-      {
-        id: 1,
-        type: "multiple-choice",
-        question: "What is the purpose of a loop in programming?",
-        answers: [
-          { text: "To repeat a block of code", correct: true, points: 5 },
-          { text: "To define a function", correct: false, points: 0 },
-          { text: "To store data in a variable", correct: false, points: 0 },
-          { text: "To display text on the screen", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 2,
-        type: "boolean",
-        question: "A variable is a container for storing data values.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 3,
-        type: "multiple-choice",
-        question: "Which data structure uses a key-value pair system?",
-        answers: [
-          { text: "Array", correct: false, points: 0 },
-          { text: "List", correct: false, points: 0 },
-          { text: "Dictionary / Hashmap", correct: true, points: 5 },
-          { text: "Queue", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 4,
-        type: "multiple-choice",
-        question:
-          "Which of the following are object-oriented programming languages? ",
-        answers: [
-          { text: "Java", correct: true, points: 2 },
-          { text: "Python", correct: true, points: 2 },
-          { text: "C++", correct: true, points: 2 },
-          { text: "HTML", correct: false, points: 0 },
-        ],
-        totalPoints: 6,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 5,
-        type: "input",
-        question:
-          "What is the output of the following Python code: `print('Hello' + ' ' + 'World!')`",
-        answer: "Hello World!",
-        totalPoints: 10,
-      },
-      {
-        id: 6,
-        type: "multiple-choice",
-        question:
-          "Which programming language is known for its use in web development?",
-        answers: [
-          { text: "C#", correct: false, points: 0 },
-          { text: "JavaScript", correct: true, points: 5 },
-          { text: "Swift", correct: false, points: 0 },
-          { text: "Kotlin", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 7,
-        type: "boolean",
-        question:
-          "Debugging is the process of finding and fixing errors in code.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 8,
-        type: "multiple-choice",
-        question:
-          "Which symbol is commonly used to indicate a single-line comment in many programming languages?",
-        answers: [
-          { text: "//", correct: true, points: 5 },
-          { text: "/*", correct: false, points: 0 },
-          { text: "#", correct: false, points: 0 },
-          { text: "--", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 9,
-        type: "multiple-choice",
-        question: "What does API stand for?",
-        answers: [
-          {
-            text: "Application Programming Interface",
-            correct: true,
-            points: 5,
-          },
-          {
-            text: "Advanced Programming Instructions",
-            correct: false,
-            points: 0,
-          },
-          {
-            text: "Application Processing Interface",
-            correct: false,
-            points: 0,
-          },
-          { text: "Automated Program Interface", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 10,
-        type: "boolean",
-        question:
-          "An algorithm is a step-by-step set of instructions to solve a problem.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 11,
-        type: "multiple-choice",
-        question:
-          "Which language is often used for data analysis and machine learning?",
-        answers: [
-          { text: "PHP", correct: false, points: 0 },
-          { text: "Ruby", correct: false, points: 0 },
-          { text: "Python", correct: true, points: 5 },
-          { text: "Go", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 12,
-        type: "input",
-        question:
-          "What is the difference between a compiler and an interpreter?",
-        answer:
-          "A compiler translates the entire code into machine code at once, while an interpreter translates and executes code line by line.",
-        totalPoints: 10,
-      },
-      {
-        id: 13,
-        type: "multiple-choice",
-        question:
-          "Which of these are version control systems? ",
-        answers: [
-          { text: "Git", correct: true, points: 2 },
-          { text: "GitHub", correct: false, points: 0 },
-          { text: "SVN", correct: true, points: 2 },
-          { text: "Bitbucket", correct: false, points: 0 },
-        ],
-        totalPoints: 4,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 14,
-        type: "boolean",
-        question:
-          "In most programming languages, the '=' symbol is used for assigning values to variables.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-    ],
-  },
-  {
-    id: 12,
-    title: "Web Security Essentials",
-    description:
-      "How well do you know your web security? Take this quiz to find out!",
-    difficulty: "Medium",
-    numQuestions: 14,
-    duration: 25,
-    cover: "./images/Web-Security-Essentials.jpg",
-    questions: [
-      {
-        id: 1,
-        type: "multiple-choice",
-        question: "What does SQL injection exploit?",
-        answers: [
-          {
-            text: "Vulnerabilities in web server configurations",
-            correct: false,
-            points: 0,
-          },
-          {
-            text: "Weaknesses in user input validation",
-            correct: true,
-            points: 5,
-          },
-          { text: "Unpatched operating systems", correct: false, points: 0 },
-          { text: "Weak encryption algorithms", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 2,
-        type: "boolean",
-        question:
-          "Cross-site scripting (XSS) allows attackers to inject malicious scripts into websites.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 3,
-        type: "multiple-choice",
-        question: "What is the purpose of a firewall?",
-        answers: [
-          { text: "To encrypt sensitive data", correct: false, points: 0 },
-          {
-            text: "To control network traffic based on predefined rules",
-            correct: true,
-            points: 5,
-          },
-          {
-            text: "To perform regular security scans",
-            correct: false,
-            points: 0,
-          },
-          { text: "To manage user authentication", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 4,
-        type: "multiple-choice",
-        question:
-          "Which of the following are common web security threats? ",
-        answers: [
-          { text: "Phishing", correct: true, points: 2 },
-          { text: "Denial-of-service (DoS) attacks", correct: true, points: 2 },
-          { text: "Malware", correct: true, points: 2 },
-          { text: "Cache poisoning", correct: true, points: 2 },
-        ],
-        totalPoints: 8,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 5,
-        type: "input",
-        question: "What is the purpose of HTTPS?",
-        answer:
-          "HTTPS encrypts communication between a user's browser and a website, ensuring data confidentiality and integrity.",
-        totalPoints: 10,
-      },
-      {
-        id: 6,
-        type: "multiple-choice",
-        question:
-          "Which security measure helps prevent cross-site request forgery (CSRF) attacks?",
-        answers: [
-          { text: "Input validation", correct: false, points: 0 },
-          { text: "Using strong passwords", correct: false, points: 0 },
-          { text: "Implementing CAPTCHAs", correct: false, points: 0 },
-          { text: "Using anti-CSRF tokens", correct: true, points: 5 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 7,
-        type: "boolean",
-        question:
-          "A brute-force attack involves trying all possible combinations to guess a password.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 8,
-        type: "multiple-choice",
-        question: "What is the purpose of a security audit?",
-        answers: [
-          {
-            text: "To identify vulnerabilities and weaknesses in a system",
-            correct: true,
-            points: 5,
-          },
-          { text: "To encrypt data", correct: false, points: 0 },
-          { text: "To monitor network traffic", correct: false, points: 0 },
-          { text: "To manage user accounts", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 9,
-        type: "multiple-choice",
-        question:
-          "Which HTTP header helps prevent cross-site scripting (XSS) attacks?",
-        answers: [
-          { text: "X-Frame-Options", correct: false, points: 0 },
-          { text: "Content-Security-Policy", correct: true, points: 5 },
-          { text: "Strict-Transport-Security", correct: false, points: 0 },
-          { text: "X-XSS-Protection", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 10,
-        type: "boolean",
-        question:
-          "Session hijacking allows an attacker to take over a user's session.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 11,
-        type: "multiple-choice",
-        question: "What is the purpose of two-factor authentication (2FA)?",
-        answers: [
-          { text: "To encrypt data", correct: false, points: 0 },
-          {
-            text: "To add an extra layer of security by requiring two forms of verification",
-            correct: true,
-            points: 5,
-          },
-          { text: "To prevent DoS attacks", correct: false, points: 0 },
-          { text: "To filter network traffic", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
-      },
-      {
-        id: 12,
-        type: "input",
-        question:
-          "What is the difference between authentication and authorization?",
-        answer:
-          "Authentication verifies the user's identity, while authorization determines what the user is allowed to access.",
-        totalPoints: 10,
-      },
-      {
-        id: 13,
-        type: "multiple-choice",
-        question:
-          "Which of the following are best practices for secure password management? ",
-        answers: [
-          { text: "Use a password manager", correct: true, points: 2 },
-          {
-            text: "Enable two-factor authentication",
-            correct: true,
-            points: 2,
-          },
-          {
-            text: "Use unique passwords for each account",
-            correct: true,
-            points: 2,
-          },
-          { text: "Regularly update passwords", correct: true, points: 2 },
-        ],
-        totalPoints: 8,
-        minimumCorrectRequired: 2,
-      },
-      {
-        id: 14,
-        type: "boolean",
-        question:
-          "Regular security updates and patches are essential for maintaining web security.",
-        answers: [
-          { text: "True", correct: true, points: 5 },
-          { text: "False", correct: false, points: 0 },
-        ],
-        totalPoints: 5,
       },
     ],
   },

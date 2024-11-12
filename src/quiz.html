@@ -15,6 +15,58 @@
     <div
       class="flex flex-col bg-primary-light dark:bg-primary-dark transition-colors duration-200 min-h-screen"
     >
+      <dialog
+        id="resultsDialog"
+        class="p-0 rounded-lg shadow-lg w-[90%] max-w-[500px] border-none"
+      >
+        <div class="p-6">
+          <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
+            Quiz Results
+          </h2>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+              <h3 class="text-gray-600 text-sm font-semibold mb-2">Score</h3>
+              <p class="text-xl font-bold text-gray-800">
+                <span id="finalScore">0</span> points
+              </p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+              <h3 class="text-gray-600 text-sm font-semibold mb-2">
+                Time Taken
+              </h3>
+              <p class="text-xl font-bold text-gray-800">
+                <span id="completionTime">0:00</span>
+              </p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+              <h3 class="text-gray-600 text-sm font-semibold mb-2">
+                Correct Answers
+              </h3>
+              <p class="text-xl font-bold text-gray-800">
+                <span id="correctAnswers">0</span>/<span id="totalQuestions"
+                  >0</span
+                >
+              </p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+              <h3 class="text-gray-600 text-sm font-semibold mb-2">Accuracy</h3>
+              <p class="text-xl font-bold text-gray-800">
+                <span id="accuracy">0</span>%
+              </p>
+            </div>
+          </div>
+
+          <button
+            onclick="closeResultsDialog()"
+            class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg font-medium transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </dialog>
       <nav class="flex justify-between items-center p-4">
         <button
           class="p-3 rounded-full transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -33,7 +85,7 @@
 
         <div class="flex items-center gap-4">
           <button
-            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md theme-btn font-serif"
+            class="p-2 text-white bg-black dark:text-black dark:bg-white rounded-md theme-btn"
             aria-label="Toggle Theme"
           >
             Theme
@@ -42,34 +94,36 @@
       </nav>
 
       <aside
-        class="fixed top-0 left-0 w-64 bg-primary-dark dark:bg-primary-light h-screen p-4 transition-all duration-300 ease-in-out z-50 hidden"
+        class="fixed top-0 left-0 w-64 bg-primary-dark dark:bg-dark-primary-dark h-screen p-4 transition-all duration-300 ease-in-out z-50 hidden"
       >
         <div class="flex flex-col justify-between h-full">
           <button
-            class="close p-2 text-primary-light bg-primary-dark dark:text-black dark:bg-white rounded-md self-start"
+            class="close p-2 text-primary-light bg-primary-dark dark:text-black dark:bg-dark-primary-dark rounded-md self-start"
             aria-label="Close Menu"
           >
             <i class="fi fi-rr-cross"></i>
           </button>
-          <ul class="space-y-4 flex-grow flex flex-col justify-center">
+          <ul
+            class="space-y-4 flex-grow flex flex-col justify-center dark:bg-dark-primary-dark"
+          >
             <li>
               <a
                 href="index.html"
-                class="block p-2 text-primary-light dark:text-primary-dark hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
+                class="block p-2 text-primary-light dark:text-white hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
                 >Home</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="block p-2 text-primary-light dark:text-primary-dark hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
+                class="block p-2 text-primary-light dark:text-white hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
                 >About</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="block p-2 text-primary-light dark:text-primary-dark hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
+                class="block p-2 text-primary-light dark:text-white font hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 transition-colors duration-200"
                 >Contact</a
               >
             </li>
@@ -86,7 +140,12 @@
             Current Quiz
           </h1>
           <div class="quiz flex flex-col gap-3">
-            <p class="question text-white"></p>
+            <p class="question text-white">
+              Question <span id="currentQuestion">1</span>/<span
+                id="totalQuestions"
+                >0</span
+              >
+            </p>
 
             <div class="answer-form flex justify-around"></div>
             <button
