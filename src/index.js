@@ -4,7 +4,7 @@ let quizzes = [
     title: "Web Development Fundamentals",
     description: "Test your knowledge of HTML, CSS, and JavaScript basics.",
     difficulty: "Easy",
-    cover: "images/Web-Development-Fundamental.jpeg",
+    cover: "src/images/Web-Development-Fundamental.jpeg",
     numQuestions: 10,
     duration: 1,
     questions: [
@@ -118,7 +118,7 @@ let quizzes = [
     difficulty: "Medium",
     numQuestions: 17,
     duration: 30,
-    cover: "images/React-Mastery.png",
+    cover: "src/images/React-Mastery.png",
     questions: [
       {
         id: 1,
@@ -377,7 +377,7 @@ let quizzes = [
     difficulty: "Medium",
     numQuestions: 15,
     duration: 45,
-    cover: "images/Node.js-and-Express.js-Fundamentals.png",
+    cover: "src/images/Node.js-and-Express.js-Fundamentals.png",
     questions: [
       {
         id: 1,
@@ -544,7 +544,7 @@ let quizzes = [
     difficulty: "Hard",
     numQuestions: 25,
     duration: 45,
-    cover: "images/Database-Design-and-SQL.avif",
+    cover: "src/images/Database-Design-and-SQL.avif",
     questions: [
       {
         id: 1,
@@ -856,7 +856,7 @@ let quizzes = [
     difficulty: "Easy",
     numQuestions: 12,
     duration: 20,
-    cover: "images/Python-Programming-Basics.webp",
+    cover: "src/images/Python-Programming-Basics.webp",
     questions: [
       {
         id: 1,
@@ -996,7 +996,7 @@ let quizzes = [
     difficulty: "Hard",
     numQuestions: 27,
     duration: 60,
-    cover: "images/Data-Science-with-Python.jpg",
+    cover: "src/images/Data-Science-with-Python.jpg",
     questions: [
       {
         id: 1,
@@ -1356,7 +1356,7 @@ let quizzes = [
     difficulty: "Medium",
     numQuestions: 18,
     duration: 35,
-    cover: "images/JavaScript-Algorithms-and-Data-Structures.webp",
+    cover: "src/images/JavaScript-Algorithms-and-Data-Structures.webp",
     questions: [
       {
         id: 1,
@@ -1571,7 +1571,7 @@ let quizzes = [
     difficulty: "Medium",
     numQuestions: 15,
     duration: 25,
-    cover: "images/Cybersecurity-Fundamentals.png",
+    cover: "src/images/Cybersecurity-Fundamentals.png",
     questions: [
       {
         id: 1,
@@ -1759,7 +1759,7 @@ let quizzes = [
     difficulty: "Easy",
     numQuestions: 9,
     duration: 15,
-    cover: "images/Networking-Basics.png",
+    cover: "src/images/Networking-Basics.png",
     questions: [
       {
         id: 1,
